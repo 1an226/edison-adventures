@@ -1,98 +1,85 @@
-// Destinations data
+// Extended destinations data
 const destinations = [
     {
         id: 1,
-        name: "Bali, Indonesia",
-        type: "beach",
+        name: "Himalayan Trek",
+        type: "mountain",
         price: 899,
-        image: "images/destination1.jpg",
-        description: "Tropical paradise with stunning beaches"
+        image: "https://images.unsplash.com/photo-1464822759849-deb9df5c95c9?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
+        description: "Trek through the majestic Himalayas with experienced guides",
+        duration: "10 days",
+        difficulty: "Advanced",
+        rating: 4.9,
+        features: ["Expert Guides", "Mountain Lodges", "Altitude Training"]
     },
     {
         id: 2,
-        name: "Swiss Alps",
-        type: "mountain",
-        price: 1299,
-        image: "images/destination2.jpg",
-        description: "Majestic mountains and charming villages"
+        name: "Bali Beach Retreat",
+        type: "beach",
+        price: 699,
+        image: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
+        description: "Luxury beachfront accommodation with water activities",
+        duration: "7 days",
+        difficulty: "Easy",
+        rating: 4.7,
+        features: ["Beachfront Villa", "Spa Treatments", "Water Sports"]
     },
     {
         id: 3,
-        name: "Santorini, Greece",
-        type: "beach",
-        price: 1099,
-        image: "images/destination3.jpg",
-        description: "White-washed buildings and stunning sunsets"
+        name: "Wilderness Camping",
+        type: "camping",
+        price: 499,
+        image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
+        description: "Authentic camping experience in pristine wilderness",
+        duration: "4 days",
+        difficulty: "Moderate",
+        rating: 4.8,
+        features: ["Professional Gear", "Wildlife Watching", "Campfire Cooking"]
     },
     {
         id: 4,
-        name: "Tokyo, Japan",
-        type: "city",
-        price: 1499,
-        image: "images/destination4.jpg",
-        description: "Vibrant city blending tradition and modernity"
+        name: "Japanese Culture Tour",
+        type: "cultural",
+        price: 1199,
+        image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
+        description: "Immerse yourself in traditional Japanese culture and history",
+        duration: "8 days",
+        difficulty: "Easy",
+        rating: 4.9,
+        features: ["Temple Stays", "Cultural Workshops", "Local Cuisine"]
     },
     {
         id: 5,
-        name: "Rocky Mountains",
+        name: "Alpine Adventure",
         type: "mountain",
-        price: 999,
-        image: "images/destination5.jpg",
-        description: "Breathtaking landscapes and outdoor adventures"
+        price: 1099,
+        image: "https://images.unsplash.com/photo-1464822759849-deb9df5c95c9?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
+        description: "Swiss Alps hiking with luxury mountain huts",
+        duration: "6 days",
+        difficulty: "Moderate",
+        rating: 4.8,
+        features: ["Alpine Huts", "Cable Car Rides", "Mountain Guides"]
     },
     {
         id: 6,
-        name: "Barcelona, Spain",
-        type: "city",
-        price: 1199,
-        image: "images/destination6.jpg",
-        description: "Architectural marvels and Mediterranean charm"
-    }
-];
-
-// Display destinations
-function displayDestinations(filter = 'all') {
-    const grid = document.querySelector('.destinations-grid-extended');
-    const filteredDestinations = filter === 'all' 
-        ? destinations 
-        : destinations.filter(dest => dest.type === filter);
-
-    grid.innerHTML = filteredDestinations.map(dest => `
-        <div class="destination-card" data-type="${dest.type}">
-            <img src="${dest.image}" alt="${dest.name}">
-            <div class="card-content">
-                <h3>${dest.name}</h3>
-                <p>${dest.description}</p>
-                <span class="price">From $${dest.price}</span>
-                <button class="book-btn" data-id="${dest.id}">Book Now</button>
-            </div>
-        </div>
-    `).join('');
-
-    // Add event listeners to book buttons
-    document.querySelectorAll('.book-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const destId = e.target.dataset.id;
-            const destination = destinations.find(d => d.id == destId);
-            alert(`Booking ${destination.name} for $${destination.price}`);
-        });
-    });
-}
-
-// Filter functionality
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // Update active button
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        
-        // Filter destinations
-        const filter = e.target.dataset.filter;
-        displayDestinations(filter);
-    });
-});
-
-// Initialize destinations page
-if (document.querySelector('.all-destinations')) {
-    displayDestinations();
-}
+        name: "Caribbean Paradise",
+        type: "beach",
+        price: 1299,
+        image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
+        description: "Private island experience in the Caribbean",
+        duration: "5 days",
+        difficulty: "Easy",
+        rating: 4.9,
+        features: ["Private Beach", "Snorkeling", "Luxury Resort"]
+    },
+    {
+        id: 7,
+        name: "Safari Camping",
+        type: "camping",
+        price: 1499,
+        image: "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
+        description: "African safari with luxury tent camping",
+        duration: "7 days",
+        difficulty: "Easy",
+        rating: 5.0,
+        features
