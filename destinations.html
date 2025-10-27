@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinations - Wanderlust Adventures</title>
+    <title>Destinations - 6ixx Adventures</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation (same as index.html) -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Wanderlust</h2>
+                <h2><i class="fas fa-mountain"></i> 6ixx Adventures</h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -29,10 +29,10 @@
     </nav>
 
     <!-- Destinations Header -->
-    <section class="destinations-header">
-        <div class="container">
-            <h1>Explore Our Destinations</h1>
-            <p>Discover amazing places around the world</p>
+    <section class="destinations-header hero">
+        <div class="hero-content">
+            <h1>All Destinations</h1>
+            <p>Discover all our amazing adventure destinations around the world</p>
         </div>
     </section>
 
@@ -40,13 +40,14 @@
     <section class="all-destinations">
         <div class="container">
             <div class="destinations-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="beach">Beach</button>
+                <button class="filter-btn active" data-filter="all">All Adventures</button>
                 <button class="filter-btn" data-filter="mountain">Mountain</button>
-                <button class="filter-btn" data-filter="city">City</button>
+                <button class="filter-btn" data-filter="beach">Beach</button>
+                <button class="filter-btn" data-filter="camping">Camping</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
             </div>
             <div class="destinations-grid-extended">
-                <!-- Destination cards will be populated by JavaScript -->
+                <!-- Destinations will be loaded by JavaScript -->
             </div>
         </div>
     </section>
