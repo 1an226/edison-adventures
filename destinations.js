@@ -2,96 +2,96 @@
 const destinations = [
     {
         id: 1,
-        name: "Himalayan Trek",
+        name: "Maiyan Resort - Nanyuki",
         type: "mountain",
-        price: 899,
+        price: "Ksh 3,999",
         image: "https://images.unsplash.com/photo-1464822759849-deb9df5c95c9?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
-        description: "Trek through the majestic Himalayas with experienced guides",
-        duration: "10 days",
+        description: "Trek through the majestic Mt. Kenya with experienced guides",
+        duration: "3 days",
         difficulty: "Advanced",
         rating: 4.9,
         features: ["Expert Guides", "Mountain Lodges", "Altitude Training"]
     },
     {
         id: 2,
-        name: "Bali Beach Retreat",
+        name: "Sarova Whitesands Beach Resort & Spa - Mombasa",
         type: "beach",
-        price: 699,
+        price: "Ksh 4,999",
         image: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
         description: "Luxury beachfront accommodation with water activities",
-        duration: "7 days",
+        duration: "3 days",
         difficulty: "Easy",
         rating: 4.7,
         features: ["Beachfront Villa", "Spa Treatments", "Water Sports"]
     },
     {
         id: 3,
-        name: "Wilderness Camping",
+        name: "Salt Lick Safari Lodge - Taita",
         type: "camping",
-        price: 499,
+        price: "Ksh 3,850",
         image: "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
         description: "Authentic camping experience in pristine wilderness",
-        duration: "4 days",
+        duration: "2 days",
         difficulty: "Moderate",
         rating: 4.8,
         features: ["Professional Gear", "Wildlife Watching", "Campfire Cooking"]
     },
     {
         id: 4,
-        name: "Japanese Culture Tour",
+        name: "Maasai Culture Tour - Narok",
         type: "cultural",
-        price: 1199,
+        price: "Ksh 2,999",
         image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
-        description: "Immerse yourself in traditional Japanese culture and history",
-        duration: "8 days",
+        description: "Immerse yourself in traditional rich Maa culture and history",
+        duration: "2 days",
         difficulty: "Easy",
         rating: 4.9,
-        features: ["Temple Stays", "Cultural Workshops", "Local Cuisine"]
+        features: ["Manyatta Stays", "Cultural Workshops", "Local Cuisine"]
     },
     {
         id: 5,
-        name: "Alpine Adventure",
+        name: "Ngong Hills Adventure",
         type: "mountain",
-        price: 1099,
+        price: "Ksh 1,999",
         image: "https://images.unsplash.com/photo-1464822759849-deb9df5c95c9?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
-        description: "Swiss Alps hiking with luxury mountain huts",
-        duration: "6 days",
+        description: "Party under the turbines, hiking with luxury mountain huts catching a glimpse of the city under the sun - Nairobi - bird's eye view",
+        duration: "1 day",
         difficulty: "Moderate",
         rating: 4.8,
-        features: ["Alpine Huts", "Cable Car Rides", "Mountain Guides"]
+        features: ["6ixx luxury mountain Huts", "Cable Car Rides", "Mountain Guides"]
     },
     {
         id: 6,
-        name: "Caribbean Paradise",
+        name: "Atella Beach - Kisumu",
         type: "beach",
-        price: 1299,
+        price: "Ksh 4,999",
         image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
-        description: "Private island experience in the Caribbean",
-        duration: "5 days",
+        description: "Private island experience in Africa's biggest natural lake, named after Queen Victoria",
+        duration: "3 days",
         difficulty: "Easy",
         rating: 4.9,
         features: ["Private Beach", "Snorkeling", "Luxury Resort"]
     },
     {
         id: 7,
-        name: "Safari Camping",
+        name: "Karura Forest",
         type: "camping",
-        price: 1499,
+        price: "Ksh 2,999",
         image: "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
         description: "African safari with luxury tent camping",
-        duration: "7 days",
+        duration: "2 days",
         difficulty: "Easy",
         rating: 5.0,
         features: ["Game Drives", "Luxury Tents", "Professional Photographer"]
     },
     {
         id: 8,
-        name: "Italian Heritage",
+        name: "Fort Jesus - Mombasa",
         type: "cultural",
-        price: 999,
+        price: "Ksh 2,900",
         image: "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60",
-        description: "Explore ancient Roman history and Italian culture",
-        duration: "6 days",
+        description: "Explore ancient Kenyan history and coastal culture",
+        duration: "3 days",
         difficulty: "Easy",
         rating: 4.7,
         features: ["Historical Sites", "Wine Tasting", "Cooking Classes"]
@@ -129,7 +129,7 @@ function displayDestinations(filter = 'all') {
                         <i class="fas fa-clock"></i>
                         <span>${dest.duration}</span>
                     </div>
-                    <div class="price">$${dest.price}</div>
+                    <div class="price">${dest.price}</div>
                 </div>
                 
                 <button class="book-btn enhanced-btn" data-id="${dest.id}">
@@ -160,7 +160,7 @@ function bookDestination(destination) {
             <div class="booking-details">
                 <p><strong>Duration:</strong> ${destination.duration}</p>
                 <p><strong>Difficulty:</strong> ${destination.difficulty}</p>
-                <p><strong>Price:</strong> $${destination.price}</p>
+                <p><strong>Price:</strong> ${destination.price}</p>
             </div>
             <div class="modal-actions">
                 <button class="cancel-btn">Cancel</button>
