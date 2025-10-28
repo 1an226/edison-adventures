@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6ixx Adventures - Discover Your Journey</title>
+    <title>6ixx Adventures - Whistling Morans Event Nov 8</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -28,34 +28,67 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Whistling Morans Hero Section -->
+    <section class="hero whistling-hero">
         <div class="hero-content">
-            <h1>Adventure Awaits with 6ixx</h1>
-            <p>Discover breathtaking destinations and create unforgettable memories with our expert-guided tours</p>
-            <button class="cta-button" onclick="exploreNow()">Start Your Journey</button>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+            <div class="event-badge">NEXT EVENT</div>
+            <h1>Whistling Morans Pool Party</h1>
+            <p class="event-date">November 8th, 2024 • Meet at 4PM • Along Mombasa Road</p>
+            <p class="event-description">Join us for an unforgettable evening of Pool Party, Live DJ, Premium Drinks & Photography</p>
+            
+            <div class="event-features">
+                <span class="feature-tag"><i class="fas fa-swimming-pool"></i> Pool Party</span>
+                <span class="feature-tag"><i class="fas fa-music"></i> Live DJ</span>
+                <span class="feature-tag"><i class="fas fa-cocktail"></i> Premium Drinks</span>
+                <span class="feature-tag"><i class="fas fa-camera"></i> Photography</span>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="cta-button primary" onclick="bookWhistlingMorans()">
+                    <i class="fas fa-ticket-alt"></i> Book Now - Ksh 1,999
+                </button>
+                <a href="https://www.instagram.com/whistlingmorans/" target="_blank" class="cta-button instagram-btn">
+                    <i class="fab fa-instagram"></i> View on Instagram
+                </a>
+            </div>
+            
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Featured Destinations -->
     <section class="featured-destinations">
         <div class="container">
-            <h2>Featured Adventures</h2>
-            <p class="section-subtitle">Curated experiences for every type of traveler</p>
+            <h2>Other Kenyan Adventures</h2>
+            <p class="section-subtitle">Explore more amazing destinations across Kenya</p>
             <div class="destinations-grid">
                 <div class="destination-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1537984822441-cff330075342?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60" alt="Mountain Trekking">
+                        <img src="images/maiyan-resort-view.jpg" alt="Maiyan Resort - Nanyuki">
                     </div>
                     <div class="card-content">
-                        <h3>Mountain Trekking</h3>
-                        <p>Conquer the highest peaks and enjoy breathtaking views</p>
+                        <h3>Maiyan Resort - Nanyuki</h3>
+                        <p>Trek through the majestic Mt. Kenya with experienced guides</p>
                         <div class="card-meta">
-                            <span class="price">From Ksh 3999</span>
-                            <span class="duration"><i class="fas fa-clock"></i> 7 days</span>
+                            <span class="price">From Ksh 3,999</span>
+                            <span class="duration"><i class="fas fa-clock"></i> 3 days</span>
                         </div>
                         <button class="book-btn" onclick="showDestination('mountain')">Explore</button>
                     </div>
@@ -63,14 +96,14 @@
                 
                 <div class="destination-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60" alt="Beach Paradise">
+                        <img src="images/sarova-beach-view.jpg" alt="Sarova Whitesands - Mombasa">
                     </div>
                     <div class="card-content">
-                        <h3>Beach Paradise</h3>
-                        <p>Relax on pristine beaches and crystal clear waters</p>
+                        <h3>Sarova Whitesands - Mombasa</h3>
+                        <p>Luxury beachfront accommodation with water activities</p>
                         <div class="card-meta">
-                            <span class="price">From Ksh6999</span>
-                            <span class="duration"><i class="fas fa-clock"></i> 5 days</span>
+                            <span class="price">From Ksh 4,999</span>
+                            <span class="duration"><i class="fas fa-clock"></i> 3 days</span>
                         </div>
                         <button class="book-btn" onclick="showDestination('beach')">Explore</button>
                     </div>
@@ -78,14 +111,14 @@
                 
                 <div class="destination-card">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.1&auto=format&fit=crop&w=500&q=60" alt="Wilderness Camping">
+                        <img src="images/salt-lick-view.jpg" alt="Salt Lick Safari Lodge - Taita">
                     </div>
                     <div class="card-content">
-                        <h3>Wilderness Camping</h3>
-                        <p>Connect with nature in untouched wilderness areas</p>
+                        <h3>Salt Lick Safari Lodge - Taita</h3>
+                        <p>Authentic camping experience in pristine wilderness</p>
                         <div class="card-meta">
-                            <span class="price">From Ksh 4000</span>
-                            <span class="duration"><i class="fas fa-clock"></i> 3 days</span>
+                            <span class="price">From Ksh 3,850</span>
+                            <span class="duration"><i class="fas fa-clock"></i> 2 days</span>
                         </div>
                         <button class="book-btn" onclick="showDestination('camping')">Explore</button>
                     </div>
@@ -105,12 +138,12 @@
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-globe-americas"></i>
-                    <h3>50+</h3>
-                    <p>Destinations</p>
+                    <h3>9+</h3>
+                    <p>Kenyan Destinations</p>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-calendar-check"></i>
-                    <h3>27+</h3>
+                    <h3>28+</h3>
                     <p>Trips Organized</p>
                 </div>
                 <div class="stat-item">
@@ -127,7 +160,7 @@
         <div class="container">
             <div class="newsletter-content">
                 <h2>Stay Adventurous</h2>
-                <p>Get exclusive deals and travel inspiration delivered to your inbox</p>
+                <p>Get exclusive Kenyan travel deals and event updates delivered to your inbox</p>
                 <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
                     <input type="email" placeholder="Enter your email address" required>
                     <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
@@ -142,10 +175,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3><i class="fas fa-mountain"></i> 6ixx Adventures</h3>
-                    <p>Making adventure accessible to everyone. Explore the world with confidence.</p>
+                    <p>Making Kenyan adventures accessible to everyone. Explore Kenya with confidence.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/whistlingmorans/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
@@ -162,21 +195,21 @@
                 <div class="footer-section">
                     <h4>Adventure Types</h4>
                     <ul>
-                        <li><a href="#">Mountain Trekking</a></li>
-                        <li><a href="#">Beach Holidays</a></li>
-                        <li><a href="#">Wilderness Camping</a></li>
-                        <li><a href="#">Cultural Tours</a></li>
+                        <li><a href="destinations.html?type=mountain">Mountain Trekking</a></li>
+                        <li><a href="destinations.html?type=beach">Beach Holidays</a></li>
+                        <li><a href="destinations.html?type=camping">Wilderness Camping</a></li>
+                        <li><a href="destinations.html?type=cultural">Cultural Tours</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p><i class="fas fa-phone"></i> 0792274598</p>
                     <p><i class="fas fa-envelope"></i> info6ixxadventures@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i>K-Mall, Kangundo Rd - NAIROBI, Kenya</p>
+                    <p><i class="fas fa-map-marker-alt"></i> K-Mall, Kangundo Rd - NAIROBI, Kenya</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 6ixx Adventures. All rights reserved. | Designed with <i class="fas fa-heart"></i> for adventure</p>
+                <p>&copy; 2024 6ixx Adventures. All rights reserved. | Designed with <i class="fas fa-heart"></i> for Kenyan adventure</p>
             </div>
         </div>
     </footer>
