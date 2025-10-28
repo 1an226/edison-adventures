@@ -123,20 +123,63 @@ body {
     position: relative;
 }
 
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    animation: fadeInUp 1s ease;
+/* Whistling Morans Hero Styles */
+.whistling-hero {
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.85), rgba(155, 81, 224, 0.85)),
+                url('images/whistling-morans-view.jpeg') center/cover;
 }
 
-.hero-content p {
+.event-badge {
+    background: var(--secondary-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.event-date {
     font-size: 1.3rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.event-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.event-features {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.event-features .feature-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
 }
 
 .cta-button {
@@ -152,12 +195,75 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-button.primary {
+    background: var(--secondary-color);
+}
+
+.cta-button.instagram-btn {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
 }
 
 .cta-button:hover {
     background: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+.cta-button.instagram-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.3);
+}
+
+/* Countdown Styles */
+.countdown {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    min-width: 80px;
+}
+
+.countdown-item span {
+    font-size: 2rem;
+    font-weight: bold;
+    display: block;
+    color: white;
+}
+
+.countdown-item small {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease 0.2s both;
 }
 
 .scroll-indicator {
@@ -550,6 +656,34 @@ body {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+
+    /* Whistling Morans Mobile Styles */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .countdown {
+        gap: 1rem;
+    }
+    
+    .countdown-item {
+        min-width: 70px;
+        padding: 0.8rem;
+    }
+    
+    .countdown-item span {
+        font-size: 1.5rem;
+    }
+    
+    .event-features {
+        gap: 0.5rem;
+    }
+    
+    .event-features .feature-tag {
+        font-size: 0.8rem;
+        padding: 8px 12px;
     }
 }
 
