@@ -109,7 +109,7 @@ body {
     transition: var(--transition);
 }
 
-/* Hero Section */
+/* Hero Section - Default */
 .hero {
     background: linear-gradient(135deg, rgba(44, 85, 48, 0.8), rgba(255, 107, 53, 0.8)),
                 url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.1&auto=format&fit=crop&w=1200&q=80') center/cover;
@@ -125,8 +125,15 @@ body {
 
 /* Whistling Morans Hero Styles */
 .whistling-hero {
-    background: linear-gradient(135deg, rgba(225, 48, 108, 0.85), rgba(155, 81, 224, 0.85)),
-                url('images/whistling-morans-view.jpeg') center/cover;
+    background: 
+        linear-gradient(135deg, 
+            rgba(225, 48, 108, 0.75), 
+            rgba(155, 81, 224, 0.75)
+        ),
+        url('images/whistling-morans-view.jpeg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .event-badge {
@@ -685,6 +692,11 @@ body {
         font-size: 0.8rem;
         padding: 8px 12px;
     }
+
+    /* Remove parallax on mobile for better performance */
+    .whistling-hero {
+        background-attachment: scroll;
+    }
 }
 
 @media (max-width: 480px) {
@@ -702,5 +714,18 @@ body {
 
     .container {
         padding: 0 15px;
+    }
+
+    .countdown {
+        gap: 0.5rem;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+        padding: 0.6rem;
+    }
+    
+    .countdown-item span {
+        font-size: 1.3rem;
     }
 }
