@@ -116,6 +116,134 @@ function showDestination(type) {
     }
 }
 
+// Whistling Morans Countdown
+function updateCountdown() {
+    const eventDate = new Date('November 8, 2024 16:00:00').getTime();
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Update countdown display
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+    if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+    if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+
+    if (distance < 0) {
+        clearInterval(countdownTimer);
+        const countdownEl = document.getElementById('countdown');
+        if (countdownEl) {
+            countdownEl.innerHTML = "<h3>Event Started! 🎉</h3>";
+        }
+    }
+}
+
+// Initialize countdown
+let countdownTimer;
+if (document.querySelector('.whistling-hero')) {
+    updateCountdown();
+    countdownTimer = setInterval(updateCountdown, 1000);
+}
+
+// Whistling Morans booking function
+function bookWhistlingMorans() {
+    const modal = document.createElement('div');
+    modal.className = 'booking-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h3>Book Whistling Morans Pool Party</h3>
+            <p><strong>Date:</strong> November 8th, 2024</p>
+            <p><strong>Time:</strong> Meet at 4:00 PM</p>
+            <p><strong>Location:</strong> Along Mombasa Road</p>
+            <p><strong>Price:</strong> Ksh 1,999</p>
+            <div class="event-activities">
+                <h4>Activities Included:</h4>
+                <ul>
+                    <li>Pool Party Access</li>
+                    <li>Live DJ Performance</li>
+                    <li>Premium Drinks & Liquor</li>
+                    <li>Professional Photography</li>
+                </ul>
+            </div>
+            <div class="modal-actions">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn">Confirm Booking</button>
+            </div>
+        </div>
+    `;
+    
+    // Add modal styles
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    modal.querySelector('.modal-content').style.cssText = `
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        max-width: 500px;
+        width: 90%;
+        animation: slideInUp 0.3s ease;
+    `;
+    
+    modal.querySelector('.cancel-btn').style.cssText = `
+        background: #ccc;
+        color: #333;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 1rem;
+    `;
+    
+    modal.querySelector('.confirm-btn').style.cssText = `
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+    `;
+    
+    // Add event listeners
+    modal.querySelector('.cancel-btn').addEventListener('click', () => {
+        modal.remove();
+    });
+    
+    modal.querySelector('.confirm-btn').addEventListener('click', () => {
+        alert(`Booking confirmed for Whistling Morans Pool Party! We'll contact you soon with meeting details.`);
+        modal.remove();
+    });
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+    
+    document.body.appendChild(modal);
+}
+
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -128,7 +256,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Add CSS for notifications
+// Add CSS for notifications and animations
 const notificationStyles = document.createElement('style');
 notificationStyles.textContent = `
     @keyframes slideInRight {
@@ -139,6 +267,22 @@ notificationStyles.textContent = `
         to {
             transform: translateX(0);
             opacity: 1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
     
@@ -154,6 +298,17 @@ notificationStyles.textContent = `
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    
+    .page-transition {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+    
+    .page-loaded .page-transition {
+        opacity: 1;
+        transform: translateY(0);
     }
 `;
 document.head.appendChild(notificationStyles);
@@ -171,22 +326,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Page transition
 document.body.style.opacity = '0';
 document.body.style.transition = 'opacity 0.3s ease';
-
-// Add this to your existing CSS for better transitions
-const additionalStyles = document.createElement('style');
-additionalStyles.textContent = `
-    .page-transition {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-    }
-    
-    .page-loaded .page-transition {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(additionalStyles);
 
 // Mark page as loaded
 window.addEventListener('load', () => {
