@@ -116,12 +116,13 @@ function showDestination(type) {
     }
 }
 
-// Whistling Morans Countdown
+// Whistling Morans Countdown - Real-time to November 8, 2024 4:00 PM
 function updateCountdown() {
-    const eventDate = new Date('November 8, 2024 16:00:00').getTime();
-    const now = new Date().getTime();
+    const eventDate = new Date('November 8, 2024 16:00:00 GMT+0300'); // 4PM East Africa Time
+    const now = new Date();
     const distance = eventDate - now;
 
+    // Calculate time units
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -138,11 +139,17 @@ function updateCountdown() {
     if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
     if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
 
+    // If countdown finished
     if (distance < 0) {
         clearInterval(countdownTimer);
         const countdownEl = document.getElementById('countdown');
         if (countdownEl) {
-            countdownEl.innerHTML = "<h3>Event Started! 🎉</h3>";
+            countdownEl.innerHTML = `
+                <div class="event-started">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem; font-size: 2rem;">🎉 Event Starting Soon! 🎉</h3>
+                    <p style="font-size: 1.2rem;">Get ready for an amazing time at Whistling Morans!</p>
+                </div>
+            `;
         }
     }
 }
@@ -309,6 +316,14 @@ notificationStyles.textContent = `
     .page-loaded .page-transition {
         opacity: 1;
         transform: translateY(0);
+    }
+    
+    .event-started {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
 `;
 document.head.appendChild(notificationStyles);
