@@ -123,17 +123,11 @@ body {
     position: relative;
 }
 
-/* Whistling Morans Hero Styles */
+/* Whistling Morans Hero Styles - NO OVERLAY */
 .whistling-hero {
-    background: 
-        linear-gradient(135deg, 
-            rgba(225, 48, 108, 0.75), 
-            rgba(155, 81, 224, 0.75)
-        ),
-        url('images/whistling-morans-view.jpeg') center/cover no-repeat;
+    background: url('images/whistling-morans-view.jpeg') center/cover no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
 
 .event-badge {
@@ -151,6 +145,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .event-description {
@@ -159,6 +154,7 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .event-features {
@@ -170,15 +166,16 @@ body {
 }
 
 .event-features .feature-tag {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-dark);
     padding: 10px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
     display: flex;
     align-items: center;
     gap: 8px;
-    backdrop-filter: blur(10px);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .hero-buttons {
@@ -206,6 +203,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
 }
 
 .cta-button.primary {
@@ -215,17 +213,18 @@ body {
 .cta-button.instagram-btn {
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
     color: white;
+    box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
 }
 
 .cta-button:hover {
     background: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+    box-shadow: 0 12px 30px rgba(255, 107, 53, 0.5);
 }
 
 .cta-button.instagram-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(225, 48, 108, 0.3);
+    box-shadow: 0 12px 30px rgba(225, 48, 108, 0.5);
 }
 
 /* Countdown Styles */
@@ -238,29 +237,34 @@ body {
 
 .countdown-item {
     text-align: center;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 1rem;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    min-width: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    min-width: 100px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border: 2px solid var(--white);
 }
 
 .countdown-item span {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     display: block;
-    color: white;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
 }
 
 .countdown-item small {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     animation: fadeInUp 1s ease;
 }
 
@@ -284,6 +288,7 @@ body {
 .scroll-indicator i {
     font-size: 2rem;
     color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Featured Destinations */
@@ -676,12 +681,12 @@ body {
     }
     
     .countdown-item {
-        min-width: 70px;
-        padding: 0.8rem;
+        min-width: 80px;
+        padding: 1rem 0.8rem;
     }
     
     .countdown-item span {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
     
     .event-features {
@@ -691,11 +696,6 @@ body {
     .event-features .feature-tag {
         font-size: 0.8rem;
         padding: 8px 12px;
-    }
-
-    /* Remove parallax on mobile for better performance */
-    .whistling-hero {
-        background-attachment: scroll;
     }
 }
 
@@ -721,11 +721,15 @@ body {
     }
     
     .countdown-item {
-        min-width: 60px;
-        padding: 0.6rem;
+        min-width: 70px;
+        padding: 0.8rem 0.5rem;
     }
     
     .countdown-item span {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    }
+    
+    .countdown-item small {
+        font-size: 0.7rem;
     }
 }
